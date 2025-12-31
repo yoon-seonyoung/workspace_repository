@@ -1,5 +1,5 @@
 <template>
-  <h3>Hello World hello GitGit</h3>
+  <h3>Hello World hello Git Closed</h3>
 </template>
 
 <script>
