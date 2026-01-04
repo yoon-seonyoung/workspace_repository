@@ -1,7 +1,10 @@
 <template>
     <div>
-        <input type="text" :placeholder="'Email'" v-model="email">
-        <input type="password" :placeholder="'Password'" v-model="password">
+        <!-- <input type="text" :placeholder="'Email'" v-model="email">
+        <input type="password" :placeholder="'Password'" v-model="password"> -->
+
+        <InputField :type="'text'" :placeholder="'Email'" :modelValue="email" @update:model-value="email = $event" />
+        <InputField :type="'password'" :placeholder="'password'" :modelValue="password" />
 
         <button @click="login">로그인하기</button>
         <div>
@@ -12,13 +15,16 @@
 </template>
 
 <script>
+import InputField from '@/components/InputField.vue';
+
 export default {
-    name:"LoginPage",
+    name: "LoginPage",
+    components: { InputField },
     data() {
         return {
             email: "",
             password: "",
-        };   
+        }   
     },
     methods: {
         login() {

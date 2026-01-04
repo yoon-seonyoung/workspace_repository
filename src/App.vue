@@ -9,7 +9,7 @@ import LoginPage from './views/LoginPage.vue';
 
 export default {
   name: "App",
-  components: { LoginPage}
+  components: { LoginPage }
 }
 </script>
 
@@ -25,6 +25,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
 }
 </style>
