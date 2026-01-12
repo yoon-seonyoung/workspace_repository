@@ -2,7 +2,7 @@
   <div class="container">
     <router-link to="/demo"></router-link>
     <router-view />
-    
+
   </div>
 </template>
 
@@ -29,18 +29,18 @@ body {
 
 }
 
-.logo-container{
+.logo-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.logo{
-  max-width:60px;
+.logo {
+  max-width: 60px;
   height: auto;
 }
 
-.button{
+.button {
   border-radius: 20px;
   border: 1px solid white;
   font-size: 15px;
@@ -49,5 +49,11 @@ body {
   padding: 10px;
   width: 100%;
   cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  font-size: small;
+  width: 100%;
 }
 </style>
