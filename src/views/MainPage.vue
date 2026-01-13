@@ -5,6 +5,7 @@
             <div>{{ userStore.userName }}</div>
         </div>
         <TweetBar />
+
         <FeedList :feeds="feedStore.feeds" />
     </div>
 </template>
@@ -25,7 +26,7 @@ export default {
         };
     },
     created() {
-        this.feedStore.setFeeds()
+        this.feedStore.setFeeds();
     }
 };
 </script>

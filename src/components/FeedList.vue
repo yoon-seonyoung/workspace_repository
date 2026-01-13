@@ -1,18 +1,19 @@
 <template>
     <div class="feed-list-container">
-        <div class="feed-container" v-for="feed in feeds" :key="feed.id">
-            <div class="feed-header">
-                <div class="feed-content">{{ feed.content }}</div>
-                <button class="feed-delete-button">X</button>
-            </div>
-            <div class="feed-name">{{ feed.user.name }}</div>
+        <FeedItem v-for="feed in feeds" :key="feed.id" :feed="feed" />
+        <!-- <div class="feed-header">
+            <div class="feed-content">{{ feed.content }}</div>
+            <button class="feed-delete-button">X</button>
         </div>
+        <div class="feed-name">{{ feed.user.name }}</div> -->
     </div>
 </template>
 
 <script>
+import FeedItem from './FeedItem.vue';
 export default {
     name: "FeedList",
+    components: { FeedItem },
     props: {
         feeds: {
             type: Array,

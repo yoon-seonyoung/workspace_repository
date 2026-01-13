@@ -1,14 +1,11 @@
 <template>
   <div class="container">
-    <router-link to="/demo"></router-link>
+    <vue3-confirm-dialog></vue3-confirm-dialog>
     <router-view />
-
   </div>
 </template>
 
 <script>
-
-
 export default {
   name: "App"
 }

@@ -89,6 +89,9 @@ export const useFeedStore = defineStore('feed', {
             this.feeds = testFeedsData;
             //“외부에서 받은 데이터를 → 내 상태에 복사해 넣는 함수”
             //action은 “store 객체 스스로 자기 상태를 고치는 함수”
+        },
+        removeFeed(id) {
+            this.feeds = this.feeds.filter(feed => feed.id !== id)
         }
     },
 
