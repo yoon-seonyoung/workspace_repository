@@ -1,5 +1,5 @@
 <template>
-    <li v-for="(item, index) in items" :key="index">
+    <li>
         <span>{{ item.id }} - {{ item.name }}</span>
     </li>
 </template>

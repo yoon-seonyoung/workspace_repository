@@ -1,109 +1,32 @@
 <template>
     <div>
-        <button @click="removeFirstItem">Remove First Item</button>
-        <button @click="removeLastItem">Remove Last Item</button>
+        <button @click="fruitStore.removeFirstItem">Remove First Item</button>
+        <button @click="fruitStore.removeLastItem">Remove Last Item</button>
 
-        <FeedList :feeds="feeds" />
+        <ul>
+            <ItemComponent v-for="item in fruitStore.fruitList" :key="item.id" :item="item" />
+        </ul>
+        <!-- <FeedList :feeds="feeds" /> -->
+        <div>getFruitListLength:{{ fruitStore.getFruitListLength }}</div>
+        <div>getFruitByNameWithA:{{ fruitStore.getFruitByNameWithA }}</div>
     </div>
 </template>
 
 <script>
-import FeedList from '@/components/FeedList.vue';
+//import FeedList from '@/components/FeedList.vue';
+import ItemComponent from '@/components/ItemComponent.vue';
+import { useFruitStore } from '@/store/fruit';
 
 export default {
     name: "DemoPage",
-    components: { FeedList },
+    components: { ItemComponent },
     data() {
         return {
-            feeds: [],
+            fruitStore: useFruitStore() //fruit.js의 state, getters, actions들어가있음.(store 인스턴스 객체)
         };
     },
-    methods: {
-        removeFirstItem() {
-            this.items.shift();
-        },
-        removeLastItem() {
-            this.items.pop();
-        }
-    },
-    created() { //created()추가
-        const testData = [
-            {
-                id: 11,
-                content: "코딩은 재밌어!",
-                user: {
-                    id: 12,
-                    name: "테스터"
-                }
-            },
-            {
-                id: 10,
-                content: "JS 디버깅 중…",
-                user: {
-                    id: 12,
-                    name: "테스터"
-                }
-            },
-            {
-                id: 9,
-                content: "커피 한 잔의 여유...",
-                user: {
-                    id: 13,
-                    name: "다미장"
-                }
-            },
-            {
-                id: 6,
-                content: "주말에 드라마 몰아보기",
-                user: {
-                    id: 13,
-                    name: "다미장"
-                }
-            },
-            {
-                id: 5,
-                content: "우리 집 강아지 너무 귀여워",
-                user: {
-                    id: 13,
-                    name: "다미장"
-                }
-            },
-            {
-                id: 4,
-                content: "2025년에는 꼭 운동한다!",
-                user: {
-                    id: 11,
-                    name: "user"
-                }
-            },
-            {
-                id: 3,
-                content: "디버깅만 몇 시간째…",
-                user: {
-                    id: 11,
-                    name: "user"
-                }
-            },
-            {
-                id: 2,
-                content: "아침 커피로 하루 시작",
-                user: {
-                    id: 11,
-                    name: "user"
-                }
-            },
-            {
-                id: 1,
-                content: "오늘도 멋진 하루 되세요!",
-                user: {
-                    id: 11,
-                    name: "user"
-                }
-            }
-        ];
-        this.feeds = testData;
-    }
-}
+
+};
 </script>
 
 <style></style>
